@@ -1,0 +1,650 @@
+/* ==========================================================================
+   1. ESTILO GLOBAL & IDENTIDADE VISUAL (PRETO & VERDE TURQUESA ESPORTIVO)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000000; /* Preto Puro de alta performance */
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #40e0d0; /* Verde Turquesa Vibrante */
+    margin-bottom: 20px;
+    border-left: 5px solid #40e0d0;
+    padding-left: 10px;
+}
+
+section {
+    padding: 60px 0;
+    border-bottom: 1px solid #111111;
+}
+
+/* ==========================================================================
+   2. MENU DE NAVEGAÇÃO SUPERIOR (STICKY)
+   ========================================================================== */
+header {
+    background-color: #080808;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(64, 224, 208, 0.15);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #ffffff;
+}
+
+.logo span {
+    color: #40e0d0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #40e0d0;
+}
+
+/* ==========================================================================
+   3. BANNER PRINCIPAL (HERO)
+   ========================================================================== */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95)), 
+                url('https://unsplash.com') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    width: 100%;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #a0a0a0;
+    margin-bottom: 30px;
+}
+/* ==========================================================================
+   4. ESPAÇO DE ANÚNCIOS DOS PATROCINADORES
+   ========================================================================== */
+.sponsors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    align-items: center;
+}
+
+.sponsor-card {
+    background-color: #0b0b0b;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px dashed #333333;
+    color: #666666;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   5. GRID DUPLO: AGENDA + RECADOS (RESPONSIVO)
+   ========================================================================== */
+.grid-duplo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+@media (max-width: 768px) {
+    .grid-duplo { 
+        grid-template-columns: 1fr; 
+        gap: 30px;
+    }
+}
+
+.agenda-lista, .mural-lista {
+    background-color: #080808;
+    padding: 25px;
+    border-radius: 8px;
+    border-top: 4px solid #40e0d0;
+}
+
+.item-agenda {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #1a1a1a;
+    padding: 15px 0;
+}
+
+.item-agenda:last-child { 
+    border: none; 
+}
+
+.data-esporte {
+    color: #40e0d0;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.item-agenda small {
+    background-color: #121212;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #222;
+    color: #a0a0a0;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   6. INTERATIVIDADE DA AGENDA (BOTÕES DAS ABAS DE GINÁSTICA)
+   ========================================================================== */
+.agenda-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 992px) {
+    .agenda-tabs {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.tab-btn {
+    background-color: #121212;
+    border: 1px solid #333333;
+    color: #ffffff;
+    padding: 12px 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.25s ease;
+    text-align: center;
+}
+
+.tab-btn:hover {
+    border-color: #40e0d0;
+    color: #40e0d0;
+}
+
+.tab-btn.active {
+    background-color: #40e0d0;
+    color: #000000;
+    border-color: #40e0d0;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+    animation: surgimento 0.4s ease-out;
+}
+
+/* ==========================================================================
+   7. MINI FORMULÁRIO E EXIBIÇÃO DO MURAL DE RECADOS
+   ========================================================================== */
+.mini-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    background-color: #121212;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #1a1a1a;
+}
+
+.mini-form input {
+    background-color: #000000;
+    border: 1px solid #333333;
+    padding: 10px 12px;
+    color: #ffffff;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: border-color 0.3s;
+}
+
+.mini-form input:focus {
+    outline: none;
+    border-color: #40e0d0;
+}
+
+.mini-form button {
+    background-color: #40e0d0;
+    color: #000000;
+    border: none;
+    padding: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: background 0.3s;
+}
+
+.mini-form button:hover {
+    background-color: #33b5a8;
+}
+
+#container-recados {
+    max-height: 320px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+#container-recados::-webkit-scrollbar {
+    width: 6px;
+}
+#container-recados::-webkit-scrollbar-thumb {
+    background-color: #222;
+    border-radius: 4px;
+}
+
+.item-recado {
+    background-color: #121212;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border-left: 3px solid #40e0d0;
+    animation: surgimento 0.4s ease-out;
+}
+
+@keyframes surgimento {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.item-recado p { 
+    font-size: 0.95rem; 
+    color: #e0e0e0;
+}
+
+.item-recado span {
+    display: block;
+    font-size: 0.8rem;
+    color: #888888;
+    margin-top: 5px;
+    text-align: right;
+    font-weight: 600;
+}
+/* ==========================================================================
+   8. GALERIA DE FOTOS E VÍDEOS (ARMAZENAMENTO VISUAL)
+   ========================================================================== */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.midia-card {
+    background-color: #080808;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #111;
+    transition: transform 0.3s ease;
+}
+
+.midia-card:hover {
+    transform: scale(1.02);
+}
+
+.midia-placeholder {
+    height: 200px;
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666666;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.midia-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #40e0d0;
+    color: #000000;
+    padding: 4px 10px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+/* ==========================================================================
+   9. FORMULÁRIO DE CONTATO / LISTA DE ESPERA
+   ========================================================================== */
+.contato-box {
+    background-color: #080808;
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #111111;
+    max-width: 650px;
+    margin: 0 auto;
+    border-top: 4px solid #40e0d0;
+}
+
+.contato-box p {
+    color: #888888;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    color: #40e0d0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #121212;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #40e0d0;
+}
+
+.btn-enviar {
+    background-color: #40e0d0;
+    color: #000000;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.btn-enviar:hover { 
+    background-color: #33b5a8; 
+}
+
+.sucesso-alerta {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(64, 224, 208, 0.1);
+    border: 1px solid #40e0d0;
+    color: #40e0d0;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 600;
+    display: none;
+}
+
+/* ==========================================================================
+   10. RODAPÉ E LINKS DE REDES SOCIAIS
+   ========================================================================== */
+footer {
+    background-color: #050505;
+    text-align: center;
+    padding: 50px 0;
+    color: #666666;
+    font-size: 0.85rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.social-links {
+    display: flex;
+    gap: 25px;
+}
+
+.social-links a {
+    color: #ffffff;
+    font-size: 1.6rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+    color: #40e0d0;
+    transform: translateY(-3px);
+}
+
+footer p {
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   11. SEGURANÇA E PAINEL ADMINISTRATIVO INTERNO DA AGENDA
+   ========================================================================== */
+.admin-agenda-form {
+    background-color: #121212;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 20px 0 10px 0;
+    border: 1px solid #222;
+}
+
+.admin-agenda-form h3 {
+    font-size: 1rem;
+    color: #40e0d0;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 500px) {
+    .form-row { flex-direction: column; }
+}
+
+.form-mini-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-mini-group label {
+    font-size: 0.75rem;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.form-mini-group input {
+    background-color: #000;
+    border: 1px solid #333;
+    padding: 8px 10px;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.form-mini-group input:focus {
+    outline: none;
+    border-color: #40e0d0;
+}
+
+.btn-adicionar-grade {
+    background-color: transparent;
+    border: 1px solid #40e0d0;
+    color: #40e0d0;
+    padding: 10px;
+    width: 100%;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    margin-top: 5px;
+}
+
+.btn-adicionar-grade:hover {
+    background-color: #40e0d0;
+    color: #000;
+}
+
+/* ==========================================================================
+   12. TRAVAS DE PRIVILÉGIOS (CADEADO E MODAL DE LOGIN)
+   ========================================================================== */
+.area-restrita-painel {
+    display: none; /* Oculta os calendários do público por padrão */
+}
+
+body.modo-admin-ativo .area-restrita-painel {
+    display: block !important; /* Exibe os calendários quando logado */
+    animation: surgimento 0.4s ease-out;
+}
+
+.btn-lock {
+    background: transparent;
+    border: 1px solid #333;
+    color: #888;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+    margin-left: 15px;
+}
+
+.btn-lock:hover, body.modo-admin-ativo .btn-lock {
+    border-color: #40e0d0;
+    color: #40e0d0;
+}
+
+/* JANELA MODAL FLUTUANTE DE LOGIN */
+.modal-admin {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-admin.open { 
+    display: flex; 
+}
+
+.modal-content {
+    background-color: #080808;
+    border: 1px solid #40e0d0;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+.modal-content h3 { color: #40e0d0; margin-bottom: 10px; text-transform: uppercase; }
+.modal-content p { color: #888; font-size: 0.9rem; margin-bottom: 20px; }
+
+.modal-content input {
+    width: 100%; padding: 12px; background-color: #121212;
+    border: 1px solid #333; color: #fff; border-radius: 4px; text-align: center; margin-bottom: 20px;
+}
+
+.modal-actions { display: flex; gap: 10px; }
+.modal-actions button {
+    flex: 1; padding: 10px; border-radius: 4px; font-weight: bold; cursor: pointer; text-transform: uppercase; font-size: 0.8rem;
+}
+
+#btn-cancelar-login { background: transparent; border: 1px solid #333; color: #fff; }
+#btn-confirmar-login { background: #40e0d0; border: none; color: #000; }

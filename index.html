@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGIPUEM - Grupo de Ginástica</title>
+        <link rel="icon" href="data:,">
+    <!-- Biblioteca de Ícones para Redes Sociais e Painel Administrativo -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- MENU DE NAVEGAÇÃO -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">AGIP<span>UEM</span></div>
+            <nav>
+                <ul style="align-items: center; display: flex;">
+                    <li><a href="#patrocinadores">Parceiros</a></li>
+                    <li><a href="#agenda">Agenda</a></li>
+                    <li><a href="#mural">Recados</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#contato">Inscrições</a></li>
+                    <!-- Botão de Acesso Administrativo (Cadeado) -->
+                    <li><button id="btn-modo-admin" class="btn-lock"><i class="fa-solid fa-lock"></i></button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- JANELA MODAL DE LOGIN (OCULTA POR PADRÃO) -->
+    <div id="modal-login" class="modal-admin">
+        <div class="modal-content">
+            <h3>Área Restrita</h3>
+            <p>Digite a senha do administrador para liberar as alterações:</p>
+            <input type="password" id="senha-admin-input" placeholder="Senha do Administrador">
+            <div class="modal-actions">
+                <button id="btn-cancelar-login">Cancelar</button>
+                <button id="btn-confirmar-login">Acessar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BANNER PRINCIPAL (HERO) -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>AGIPUEM</h1>
+            <p>Força, precisão e arte em movimento. O site oficial da nossa ginástica.</p>
+        </div>
+    </section>
+
+    <!-- ANÚNCIOS DE PATROCINADORES -->
+    <section id="patrocinadores" class="container">
+        <h2>Nossos Patrocinadores</h2>
+        <div class="sponsors-grid">
+            <div class="sponsor-card">Patrocinador 1</div>
+            <div class="sponsor-card">Patrocinador 2</div>
+            <div class="sponsor-card">Patrocinador 3</div>
+            <div class="sponsor-card">Patrocinador 4</div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DUPLA: AGENDA INTERATIVA E MURAL DE RECADOS -->
+    <section class="container">
+        <div class="grid-duplo">
+            
+            <!-- AGENDA INTERATIVA DE TREINOS -->
+            <div id="agenda" class="agenda-lista">
+                <h2>Horários de Treino</h2>
+                <p style="color: #888; font-size: 0.9rem; margin-bottom: 15px;">Selecione a modalidade abaixo para ver a grade horária:</p>
+                
+                <!-- 4 Botões Direcionadores de Modalidades -->
+                <div class="agenda-tabs">
+                    <button class="tab-btn active" data-target="ritmica">G. Rítmica</button>
+                    <button class="tab-btn" data-target="artistica-iniciacao">G.A. Iniciação</button>
+                    <button class="tab-btn" data-target="artistica-treino">G.A. Treinamento</button>
+                    <button class="tab-btn" data-target="artistica-pre">G.A. Pré-Treino</button>
+                </div>
+
+                <!-- Conteúdo de Exibição das Modalidades -->
+                <div class="agenda-content">
+                    
+                    <!-- 1. GINÁSTICA RÍTMICA -->
+                    <div id="tab-ritmica" class="tab-panel active">
+                        <div class="container-cards-grade"></div>
+                        <!-- Calendário de anotação exclusivo da Rítmica (RESTRITO AO ADMIN) -->
+                        <div class="admin-agenda-form area-restrita-painel">
+                            <h3><i class="fa-solid fa-calendar-plus"></i> Anotar na Ginástica Rítmica</h3>
+                            <form class="form-novo-horario" data-modalidade="ritmica">
+                                <div class="form-row">
+                                    <div class="form-mini-group"><label>Data</label><input type="date" class="input-dias" required></div>
+                                    <div class="form-mini-group"><label>Descrição</label><input type="text" class="input-nome-treino" placeholder="Ex: Treino de Fitas" required></div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-mini-group"><label>Início</label><input type="time" class="input-hora-inicio" required></div>
+                                    <div class="form-mini-group"><label>Término</label><input type="time" class="input-hora-fim" required></div>
+                                </div>
+                                <button type="submit" class="btn-adicionar-grade">Salvar na G. Rítmica</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- 2. GINÁSTICA ARTÍSTICA INICIAÇÃO -->
+                    <div id="tab-artistica-iniciacao" class="tab-panel">
+                        <div class="container-cards-grade"></div>
+                        <!-- Calendário de anotação exclusivo da GA Iniciação (RESTRITO AO ADMIN) -->
+                        <div class="admin-agenda-form area-restrita-painel">
+                            <h3><i class="fa-solid fa-calendar-plus"></i> Anotar na G.A. Iniciação</h3>
+                            <form class="form-novo-horario" data-modalidade="artistica-iniciacao">
+                                <div class="form-row">
+                                    <div class="form-mini-group"><label>Data</label><input type="date" class="input-dias" required></div>
+                                    <div class="form-mini-group"><label>Descrição</label><input type="text" class="input-nome-treino" placeholder="Ex: Exercícios de Solo" required></div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-mini-group"><label>Início</label><input type="time" class="input-hora-inicio" required></div>
+                                    <div class="form-mini-group"><label>Término</label><input type="time" class="input-hora-fim" required></div>
+                                </div>
+                                <button type="submit" class="btn-adicionar-grade">Salvar na G.A. Iniciação</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- 3. GINÁSTICA ARTÍSTICA TREINAMENTO -->
+                    <div id="tab-artistica-treino" class="tab-panel">
+                        <div class="container-cards-grade"></div>
+                        <!-- Calendário de anotação exclusivo da GA Treinamento (RESTRITO AO ADMIN) -->
+                        <div class="admin-agenda-form area-restrita-painel">
+                            <h3><i class="fa-solid fa-calendar-plus"></i> Anotar na G.A. Treinamento</h3>
+                            <form class="form-novo-horario" data-modalidade="artistica-treino">
+                                <div class="form-row">
+                                    <div class="form-mini-group"><label>Data</label><input type="date" class="input-dias" required></div>
+                                    <div class="form-mini-group"><label>Descrição</label><input type="text" class="input-nome-treino" placeholder="Ex: Treino de Salto" required></div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-mini-group"><label>Início</label><input type="time" class="input-hora-inicio" required></div>
+                                    <div class="form-mini-group"><label>Término</label><input type="time" class="input-hora-fim" required></div>
+                                </div>
+                                <button type="submit" class="btn-adicionar-grade">Salvar na G.A. Treinamento</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- 4. GINÁSTICA ARTÍSTICA PRÉ TREINAMENTO -->
+                    <div id="tab-artistica-pre" class="tab-panel">
+                        <div class="container-cards-grade"></div>
+                        <!-- Calendário de anotação exclusivo da GA Pré-Treino (RESTRITO AO ADMIN) -->
+                        <div class="admin-agenda-form area-restrita-painel">
+                            <h3><i class="fa-solid fa-calendar-plus"></i> Anotar na G.A. Pré-Treino</h3>
+                            <form class="form-novo-horario" data-modalidade="artistica-pre">
+                                <div class="form-row">
+                                    <div class="form-mini-group"><label>Data</label><input type="date" class="input-dias" required></div>
+                                    <div class="form-mini-group"><label>Descrição</label><input type="text" class="input-nome-treino" placeholder="Ex: Força e Flexibilidade" required></div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-mini-group"><label>Início</label><input type="time" class="input-hora-inicio" required></div>
+                                    <div class="form-mini-group"><label>Término</label><input type="time" class="input-hora-fim" required></div>
+                                </div>
+                                <button type="submit" class="btn-adicionar-grade">Salvar na G.A. Pré-Treino</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- MURAL DE RECADOS DINÂMICO (LIBERADO AO PÚBLICO) -->
+            <div id="mural" class="mural-lista">
+                <h2>Mural de Recados</h2>
+                <form id="form-recado" class="mini-form">
+                    <input type="text" id="autor-recado" required placeholder="Seu nome ou apelido">
+                    <input type="text" id="texto-recado" required placeholder="Deixe seu recado de incentivo aqui...">
+                    <button type="submit">Publicar</button>
+                </form>
+                <div id="container-recados"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GALERIA DE FOTOS E VÍDEOS -->
+    <section id="galeria" class="container">
+        <h2>Fotos e Vídeos</h2>
+        <div class="galeria-grid">
+            <div class="midia-card"><span class="midia-tag">Foto</span><div class="midia-placeholder">Espaço para Foto 1</div></div>
+            <div class="midia-card"><span class="midia-tag">Vídeo</span><div class="midia-placeholder">Espaço para Vídeo 1</div></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><div class="midia-placeholder">Espaço para Foto 2</div></div>
+            <div class="midia-card"><span class="midia-tag">Vídeo</span><div class="midia-placeholder">Espaço para Vídeo 2</div></div>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO DE LISTA DE ESPERA (LIBERADO AO PÚBLICO) -->
+    <section id="contato" class="container">
+        <div class="contato-box">
+            <h2>Lista de Espera</h2>
+            <p>Preencha os dados abaixo e aguarde o contato.</p>
+            <form id="form-contato">
+                <div class="form-group"><label for="nome">Nome Completo</label><input type="text" id="nome" required placeholder="Digite seu nome"></div>
+                <div class="form-group"><label for="email">E-mail</label><input type="email" id="email" required placeholder="seuemail@exemplo.com"></div>
+                <div class="form-group"><label for="telefone">Telefone / WhatsApp</label><input type="tel" id="telefone" required placeholder="(00) 00000-0000"></div>
+                <div class="form-group"><label for="mensagem">Mensagem / Dúvidas (Opcional)</label><textarea id="mensagem" rows="4" placeholder="Conte-nos sua experiência..."></textarea></div>
+                <button type="submit" class="btn-enviar">Enviar Inscrição</button>
+            </form>
+            <div id="mensagem-sucesso" class="sucesso-alerta"></div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ COM ATUALIZAÇÃO DE DIREITOS -->
+    <footer>
+        <div class="container footer-content">
+            <div class="social-links">
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://wa.me" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>&copy; 2026 AGIPUEM. Todos os direitos reservados a Leonardo Rodrigues Falcão Malacrida. Design Esportivo.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
