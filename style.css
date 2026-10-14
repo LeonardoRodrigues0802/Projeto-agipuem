@@ -481,7 +481,7 @@ footer {
 
 .footer-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 25px;
 }
