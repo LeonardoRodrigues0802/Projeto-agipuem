@@ -397,10 +397,10 @@ nav ul li a:hover {
     border-radius: 8px;
     border: 1px solid #111111;
     max-width: 650px;
-    width: 100%;
-    margin: 0 auto;
+    width: 100%; /* Garante que o box ocupe a largura disponível até o max-width */
+    margin: 0 auto; /* Centraliza perfeitamente na tela */
     border-top: 4px solid #40e0d0;
-    box-sizing: border-box; /* Evita que o padding estoure a largura */
+    box-sizing: border-box; /* Impede que o padding aumente a largura real */
 }
 
 .contato-box p {
@@ -432,7 +432,7 @@ nav ul li a:hover {
     border-radius: 4px;
     color: #ffffff;
     font-size: 1rem;
-    box-sizing: border-box; /* Essencial para o input não vazar do box */
+    box-sizing: border-box; /* Essencial para os inputs não estourarem o formulário */
     transition: border-color 0.3s;
 }
 
@@ -477,21 +477,26 @@ nav ul li a:hover {
    10. RODAPÉ E LINKS DE REDES SOCIAIS
    ========================================================================== */
 footer {
+    width: 100%; /* Força o rodapé a ocupar 100% da largura da tela */
     background-color: #050505;
     text-align: center;
-    padding: 50px 20px; /* Adicionado padding lateral para telas pequenas */
+    padding: 50px 20px;
     color: #666666;
     font-size: 0.85rem;
+    clear: both; /* Garante que ele fique abaixo de elementos flutuantes */
+    box-sizing: border-box;
+    margin-top: 60px; /* Garante um espaçamento seguro acima do rodapé */
 }
 
 .footer-content {
     display: flex;
-    flex-direction: column; /* Empilha os itens no rodapé para evitar quebras */
+    flex-direction: column; /* Empilha o texto e as redes sociais verticalmente */
     align-items: center;
     justify-content: center;
     gap: 20px;
     max-width: 800px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .social-links {
