@@ -397,8 +397,10 @@ nav ul li a:hover {
     border-radius: 8px;
     border: 1px solid #111111;
     max-width: 650px;
+    width: 100%;
     margin: 0 auto;
     border-top: 4px solid #40e0d0;
+    box-sizing: border-box; /* Evita que o padding estoure a largura */
 }
 
 .contato-box p {
@@ -421,7 +423,8 @@ nav ul li a:hover {
     font-weight: 700;
 }
 
-.form-group input, .form-group textarea {
+.form-group input, 
+.form-group textarea {
     width: 100%;
     padding: 12px;
     background-color: #121212;
@@ -429,10 +432,12 @@ nav ul li a:hover {
     border-radius: 4px;
     color: #ffffff;
     font-size: 1rem;
+    box-sizing: border-box; /* Essencial para o input não vazar do box */
     transition: border-color 0.3s;
 }
 
-.form-group input:focus, .form-group textarea:focus {
+.form-group input:focus, 
+.form-group textarea:focus {
     outline: none;
     border-color: #40e0d0;
 }
@@ -474,21 +479,25 @@ nav ul li a:hover {
 footer {
     background-color: #050505;
     text-align: center;
-    padding: 50px 0;
+    padding: 50px 20px; /* Adicionado padding lateral para telas pequenas */
     color: #666666;
     font-size: 0.85rem;
 }
 
 .footer-content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column; /* Empilha os itens no rodapé para evitar quebras */
     align-items: center;
-    gap: 25px;
+    justify-content: center;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .social-links {
     display: flex;
     gap: 25px;
+    justify-content: center;
 }
 
 .social-links a {
@@ -505,8 +514,8 @@ footer {
 footer p {
     max-width: 600px;
     line-height: 1.5;
+    margin: 0;
 }
-
 /* ==========================================================================
    11. SEGURANÇA E PAINEL ADMINISTRATIVO INTERNO DA AGENDA
    ========================================================================== */
