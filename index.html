@@ -118,9 +118,123 @@
                             </form>
                         </div>
                     </div>
+
                     <!-- 3. GINÁSTICA ARTÍSTICA TREINAMENTO -->
                     <div id="tab-artistica-treino" class="tab-panel">
                         <div class="container-cards-grade"></div>
                         <div class="admin-agenda-form area-restrita-painel">
                             <h3><i class="fa-solid fa-calendar-plus"></i> Anotar na G.A. Treinamento</h3>
-                            <form class="form-novo-horario" data-modalidade="artistica-
+                            <form class="form-novo-horario" data-modalidade="artistica-treino">
+                                <div class="form-row">
+                                    <div class="form-mini-group"><label>Data</label><input type="date" class="input-dias" required></div>
+                                    <div class="form-mini-group"><label>Descrição</label><input type="text" class="input-nome-treino" placeholder="Ex: Treino de Salto" required></div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-mini-group"><label>Início</label><input type="time" class="input-hora-inicio" required></div>
+                                    <div class="form-mini-group"><label>Término</label><input type="time" class="input-hora-fim" required></div>
+                                </div>
+                                <button type="submit" class="btn-adicionar-grade">Salvar na G.A. Treinamento</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- 4. GINÁSTICA ARTÍSTICA PRÉ TREINAMENTO -->
+                    <div id="tab-artistica-pre" class="tab-panel">
+                        <div class="container-cards-grade"></div>
+                        <div class="admin-agenda-form area-restrita-painel">
+                            <h3><i class="fa-solid fa-calendar-plus"></i> Anotar na G.A. Pré-Treino</h3>
+                            <form class="form-novo-horario" data-modalidade="artistica-pre">
+                                <div class="form-row">
+                                    <div class="form-mini-group"><label>Data</label><input type="date" class="input-dias" required></div>
+                                    <div class="form-mini-group"><label>Descrição</label><input type="text" class="input-nome-treino" placeholder="Ex: Força e Flexibilidade" required></div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-mini-group"><label>Início</label><input type="time" class="input-hora-inicio" required></div>
+                                    <div class="form-mini-group"><label>Término</label><input type="time" class="input-hora-fim" required></div>
+                                </div>
+                                <button type="submit" class="btn-adicionar-grade">Salvar na G.A. Pré-Treino</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- MURAL DE RECADOS DINÂMICO (LIBERADO AO PÚBLICO) -->
+            <div id="mural" class="mural-lista">
+                <h2>Mural de Recados</h2>
+                <form id="form-recado" class="mini-form">
+                    <input type="text" id="autor-recado" required placeholder="Seu nome ou apelido">
+                    <input type="text" id="texto-recado" required placeholder="Deixe seu recado de incentivo aqui...">
+                    <button type="submit">Publicar</button>
+                </form>
+                <div id="container-recados"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GALERIA DE FOTOS E VÍDEOS -->
+    <section id="galeria" class="container">
+        <h2>Fotos e Vídeos</h2>
+        <div class="galeria-grid">
+            <!-- FOTOS (01 a 24) na pasta fotos/ -->
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO01.jpg" alt="Foto 1" class="midia-img"></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO02.jpg" alt="Foto 2" class="midia-img"></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO03.jpg" alt="Foto 3" class="midia-img"></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO04.jpg" alt="Foto 4" class="midia-img"></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO05.jpg" alt="Foto 5" class="midia-img"></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO06.jpg" alt="Foto 6" class="midia-img"></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO07.jpg" alt="Foto 7" class="midia-img"></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO08.jpg" alt="Foto 8" class="midia-img"></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO09.jpg" alt="Foto 9" class="midia-img"></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO10.jpg" alt="Foto 10" class="midia-img"></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO11.jpg" alt="Foto 11" class="midia-img"></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO12.jpg" alt="Foto 12" class="midia-img"></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO13.jpg" alt="Foto 13" class="midia-img"></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO14.jpg" alt="Foto 14" class="midia-img"></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO15.jpg" alt="Foto 15" class="midia-img"></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO16.jpg" alt="Foto 16" class="midia-img"></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO17.jpg" alt="Foto 17" class="midia-img"></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO18.jpg" alt="Foto 18" class="midia-img"></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO19.jpg" alt="Foto 19" class="midia-img"></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO20.jpg" alt="Foto 20" class="midia-img"></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO21.jpg" alt="Foto 21" class="midia-img"></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO22.jpg" alt="Foto 22" class="midia-img"></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO23.jpg" alt="Foto 23" class="midia-img"></div>
+            <div class="midia-card"><span class="midia-tag">Foto</span><img src="fotos/FOTO24.jpg" alt="Foto 24" class="midia-img"></div>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO DE LISTA DE ESPERA (LIBERADO AO PÚBLICO) -->
+    <section id="contato" class="container">
+        <div class="contato-box">
+            <h2>Lista de Espera</h2>
+            <p>Preencha os dados abaixo e aguarde o contato.</p>
+            <form id="form-contato">
+                <div class="form-group"><label for="nome">Nome Completo</label><input type="text" id="nome" required placeholder="Digite seu nome"></div>
+                <div class="form-group"><label for="email">E-mail</label><input type="email" id="email" required placeholder="seuemail@exemplo.com"></div>
+                <div class="form-group"><label for="telefone">Telefone / WhatsApp</label><input type="tel" id="telefone" required placeholder="(00) 00000-0000"></div>
+                <div class="form-group"><label for="mensagem">Mensagem / Dúvidas (Opcional)</label><textarea id="mensagem" rows="4" placeholder="Conte-nos sua experiência..."></textarea></div>
+                <button type="submit" class="btn-enviar">Enviar Inscrição</button>
+            </form>
+            <div id="mensagem-sucesso" class="sucesso-alerta"></div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ COM ATUALIZAÇÃO DE DIREITOS -->
+    <footer>
+        <div class="container footer-content">
+            <div class="social-links">
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://wa.me" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>&copy; 2026 AGIPUEM. Todos os direitos reservados a Leonardo Rodrigues Falcão Malacrida. Design Esportivo.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
