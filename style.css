@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: #000000; /* Preto Puro de alta performance */
+    background-color: #000000;
     color: #ffffff;
     line-height: 1.6;
 }
@@ -30,7 +30,7 @@ h2 {
     font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #40e0d0; /* Verde Turquesa Vibrante */
+    color: #40e0d0;
     margin-bottom: 20px;
     border-left: 5px solid #40e0d0;
     padding-left: 10px;
@@ -118,6 +118,7 @@ nav ul li a:hover {
     color: #a0a0a0;
     margin-bottom: 30px;
 }
+
 /* ==========================================================================
    4. ESPAÇO DE ANÚNCIOS DOS PATROCINADORES
    ========================================================================== */
@@ -332,8 +333,9 @@ nav ul li a:hover {
     text-align: right;
     font-weight: 600;
 }
+
 /* ==========================================================================
-   8. GALERIA DE FOTOS E VÍDEOS (ARMAZENAMENTO VISUAL)
+   8. GALERIA DE FOTOS E VÍDEOS
    ========================================================================== */
 .galeria-grid {
     display: grid;
@@ -352,19 +354,6 @@ nav ul li a:hover {
 
 .midia-card:hover {
     transform: scale(1.02);
-}
-
-.midia-placeholder {
-    height: 200px;
-    background-color: #121212;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #666666;
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .midia-tag {
@@ -387,7 +376,17 @@ nav ul li a:hover {
     height: 200px;
     object-fit: cover;
     display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Suaviza o zoom */
 }
+
+/* Classe ativada via JavaScript para dar zoom na imagem clicada */
+.midia-card img.midia-img.ampliada {
+    transform: scale(1.8);
+    position: relative;
+    z-index: 1000;
+}
+
 /* ==========================================================================
    9. FORMULÁRIO DE CONTATO / LISTA DE ESPERA
    ========================================================================== */
@@ -397,10 +396,10 @@ nav ul li a:hover {
     border-radius: 8px;
     border: 1px solid #111111;
     max-width: 650px;
-    width: 100%; /* Garante que o box ocupe a largura disponível até o max-width */
-    margin: 0 auto; /* Centraliza perfeitamente na tela */
+    width: 100%;
+    margin: 0 auto;
     border-top: 4px solid #40e0d0;
-    box-sizing: border-box; /* Impede que o padding aumente a largura real */
+    box-sizing: border-box;
 }
 
 .contato-box p {
@@ -432,7 +431,7 @@ nav ul li a:hover {
     border-radius: 4px;
     color: #ffffff;
     font-size: 1rem;
-    box-sizing: border-box; /* Essencial para os inputs não estourarem o formulário */
+    box-sizing: border-box;
     transition: border-color 0.3s;
 }
 
@@ -477,20 +476,20 @@ nav ul li a:hover {
    10. RODAPÉ E LINKS DE REDES SOCIAIS
    ========================================================================== */
 footer {
-    width: 100%; /* Força o rodapé a ocupar 100% da largura da tela */
+    width: 100%;
     background-color: #050505;
     text-align: center;
     padding: 50px 20px;
     color: #666666;
     font-size: 0.85rem;
-    clear: both; /* Garante que ele fique abaixo de elementos flutuantes */
+    clear: both;
     box-sizing: border-box;
-    margin-top: 60px; /* Garante um espaçamento seguro acima do rodapé */
+    margin-top: 60px;
 }
 
 .footer-content {
     display: flex;
-    flex-direction: column; /* Empilha o texto e as redes sociais verticalmente */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px;
@@ -521,6 +520,7 @@ footer p {
     line-height: 1.5;
     margin: 0;
 }
+
 /* ==========================================================================
    11. SEGURANÇA E PAINEL ADMINISTRATIVO INTERNO DA AGENDA
    ========================================================================== */
@@ -603,11 +603,11 @@ footer p {
    12. TRAVAS DE PRIVILÉGIOS (CADEADO E MODAL DE LOGIN)
    ========================================================================== */
 .area-restrita-painel {
-    display: none; /* Oculta os calendários do público por padrão */
+    display: none;
 }
 
 body.modo-admin-ativo .area-restrita-painel {
-    display: block !important; /* Exibe os calendários quando logado */
+    display: block !important;
     animation: surgimento 0.4s ease-out;
 }
 
@@ -628,7 +628,6 @@ body.modo-admin-ativo .area-restrita-painel {
     color: #40e0d0;
 }
 
-/* JANELA MODAL FLUTUANTE DE LOGIN */
 .modal-admin {
     display: none;
     position: fixed;

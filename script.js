@@ -1,6 +1,5 @@
 const API_URL = "http://localhost:5000/api";
 
-
 document.addEventListener('DOMContentLoaded', () => {
     let tokenAdmin = localStorage.getItem('agipuem_token') || "";
     if (tokenAdmin) document.body.classList.add('modo-admin-ativo');
@@ -93,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json',
-                    'Authorization': tokenAdmin // Passa o token de segurança
+                    'Authorization': tokenAdmin 
                 },
                 body: JSON.stringify({ modalidade, data_treino: dataFormatada, descricao: nomeTreino, hora_inicio: horaInicio, hora_fim: horaFim })
             })
@@ -164,5 +163,27 @@ document.addEventListener('DOMContentLoaded', () => {
             a.classList.add('active');
             document.getElementById(`tab-${a.getAttribute('data-target')}`).classList.add('active');
         });
+    });
+
+    // --- ZOOM NAS FOTOS DA GALERIA AO CLICAR ---
+    const fotosGaleria = document.querySelectorAll('.midia-img');
+    fotosGaleria.forEach(foto => {
+        foto.addEventListener('click', function(e) {
+            e.stopPropagation(); // Evita conflitos com outros cliques
+            const estaAmpliada = this.classList.contains('ampliada');
+            
+            // Remove o zoom de todas as outras fotos abertas antes de abrir a atual
+            fotosGaleria.forEach(f => f.classList.remove('ampliada'));
+            
+            // Se não estava ampliada, aplica o zoom agora
+            if (!estaAmpliada) {
+                this.classList.add('ampliada');
+            }
+        });
+    });
+
+    // Fecha a foto ampliada caso o usuário clique em qualquer outro lugar fora dela
+    document.addEventListener('click', function() {
+        fotosGaleria.forEach(f => f.classList.remove('ampliada'));
     });
 });
