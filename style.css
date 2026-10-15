@@ -335,7 +335,7 @@ nav ul li a:hover {
 }
 
 /* ==========================================================================
-   8. GALERIA DE FOTOS E VÍDEOS & LIGHTBOX (TELA CHEIA)
+   8. GALERIA DE FOTOS E VÍDEOS & LIGHTBOX (TELA CHEIA SEM PISCAR)
    ========================================================================== */
 .galeria-grid {
     display: grid;
@@ -352,8 +352,8 @@ nav ul li a:hover {
     transition: transform 0.3s ease;
 }
 
-/* Só dá zoom no card se a foto NÃO estiver ampliada */
-.midia-card:not(:has(.lightbox-ativo)):hover {
+/* O cartão só aumenta se a imagem NÃO estiver ampliada */
+.midia-card:hover {
     transform: scale(1.02);
 }
 
@@ -381,7 +381,7 @@ nav ul li a:hover {
     transition: transform 0.3s ease;
 }
 
-/* Efeito Lightbox: Foto em destaque no centro da tela (sem piscar) */
+/* Efeito Lightbox: Foto em destaque no centro da tela (Desativa o hover do pai) */
 .midia-card img.midia-img.lightbox-ativo {
     position: fixed !important;
     top: 50% !important;
@@ -395,6 +395,12 @@ nav ul li a:hover {
     z-index: 99999 !important;
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.95);
     border-radius: 8px;
+    pointer-events: auto; /* Garante estabilidade ao passar o mouse */
+}
+
+/* Quando a foto está ativa, desliga qualquer efeito de movimento no cartão pai */
+.midia-card:has(.lightbox-ativo) {
+    transform: none !important;
 }
 
 /* Fundo escuro do Lightbox */
@@ -412,6 +418,7 @@ nav ul li a:hover {
 #overlay-lightbox.ativo {
     display: block;
 }
+
 /* ==========================================================================
    9. FORMULÁRIO DE CONTATO / LISTA DE ESPERA
    ========================================================================== */

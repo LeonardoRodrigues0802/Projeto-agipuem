@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- LIGHTBOX BLINDADO PARA AS FOTOS DA GALERIA ---
+    // --- LIGHTBOX ESTÁVEL PARA AS FOTOS DA GALERIA ---
     const fotosGaleria = document.querySelectorAll('.midia-img');
     const overlay = document.getElementById('overlay-lightbox');
 
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fotosGaleria.forEach(f => f.classList.remove('lightbox-ativo'));
             if (overlay) overlay.classList.remove('ativo');
 
-            // 2. Se não estava ativa, abre com segurança
+            // 2. Se não estava ativa, abre com estabilidade
             if (!jaAtiva) {
                 this.classList.add('lightbox-ativo');
                 if (overlay) overlay.classList.add('ativo');
